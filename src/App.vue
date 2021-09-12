@@ -1,32 +1,55 @@
 <template>
   <div id="app">
+    <Test/>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <div class="container">
+        <router-link to="/" v-html="home"></router-link> 
+        <router-link to="/about" v-html="about"></router-link>  
+        <router-link to="/fetch" v-html="fetch"></router-link>  
+      </div>
+      
     </div>
     <router-view />
   </div>
 </template>
 
+<script>
+import Test from "@/components/Test.vue";
+
+export default {
+
+  components: {
+    Test,
+    
+  },
+  data() {
+    return{
+      home:'Home',
+      about: 'About',
+      fetch: 'fetch'
+      
+    }
+    
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+  padding:0;
+  margin:0;
+  font-family: "Poppins", Times, serif;
+}
+#nav{
+  background-color: black;
+  padding: 20px 0 20px 0
+}
+#nav a{
+  color:white;
+  text-decoration: none;
+  padding-right:20px;
+  font-size:14
 }
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

@@ -19,9 +19,16 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/fetch",
+    name: "fetch",
+    component: () =>
+      import(/* webpackChunkName: "fetch" */ "../views/fetch.vue"),
+  },
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes,
 });
 
